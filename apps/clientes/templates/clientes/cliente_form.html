@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Cadastro de Clientes</h1>
+    <form action="" method="post" autocomplete="off">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-8">
+                {{form.colaborador|as_crispy_field}}
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                {{form.codigo|as_crispy_field}}
+            </div>
+            <div class="col-md-8">
+                {{form.razao_social|as_crispy_field}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                {{form.pessoa_contato|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.telefone|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.email|as_crispy_field}}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success"><i class="fas fa-database"></i> Gravar</button>
+    </form>
+{% endblock %}

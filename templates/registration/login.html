@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container mb-3">
+    <h4 class="text-center">Entrar</h4>
+    <div class="row mb-3 justify-content-center border border-dark">
+        <div class="col-md-8 text-center">
+            <form method="post">
+              {% csrf_token %}
+              {{ form|crispy }}
+              <button type="submit" class="btn btn-success btn-block">Entrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

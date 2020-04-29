@@ -1,0 +1,28 @@
+from django.db import models
+
+from apps.colaboradores.models import Colaborador
+
+
+class Participante(models.Model):
+    colaborador = models.ForeignKey(Colaborador, on_delete=models.CASCADE)
+    cnpj = models.CharField(max_length=11, blank=True, null=True, help_text='Informe o CNPJ do Participante')
+    codigo = models.CharField(max_length=10)
+    razao_social = models.CharField(max_length=100)
+    pessoa_contato = models.CharField(max_length=50, default='Fulano')
+    telefone = models.CharField(max_length=20, default='(071) 9 9999-9999')
+    email = models.EmailField(default='cliente@cliente.com.br')
+    cep = models.CharField(max_length=8, default=41000 - 000, help_text='Informe o CEP')
+    endereco = models.CharField(max_length=50, default='Rua do Sobe e Desce',
+                                help_text='Informe se é Rua, Avenida, etc')
+    numero = models.CharField(max_length=10, default='s/n', help_text='Informe o número')
+    complemento = models.CharField(max_length=10, blank=True, null=True, help_text='Informe o complemento')
+    bairro = models.CharField(max_length=20, blank=True, null=True, help_text='Informe o bairro')
+    cidade = models.CharField(max_length=20, default='Salvador', help_text='Informe a cidade')
+    uf = models.CharField(max_length=2, default='BA', help_text='Informe o estado')
+    pais = models.CharField(max_length=15, default='Brasil', help_text='Informe o país')
+
+    def __str__(self):
+        return self.razao_social
+
+    class Meta:
+        ordering: ['razao_social']

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Página Inicial</h1>
+    <ul>
+       <li> <a href="{% url 'colaborador_list' %}">Colaboradores</a> </li>
+       <li> <a href="{% url 'cliente_list' %}">Clientes</a> </li>
+       <li> <a href="">Produtos</a> </li>
+       <li> <a href="">Pedidos</a> </li>
+    </ul>
+{% endblock %}
