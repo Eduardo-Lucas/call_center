@@ -4,7 +4,7 @@ from apps.colaboradores.models import Colaborador
 
 
 class Participante(models.Model):
-    colaborador = models.ForeignKey(Colaborador, on_delete=models.CASCADE)
+    colaborador = models.ManyToManyField(Colaborador)
     cnpj = models.CharField(max_length=11, blank=True, null=True, help_text='Informe o CNPJ do Participante')
     codigo = models.CharField(max_length=10)
     razao_social = models.CharField(max_length=100)

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container text-center">
+        <div class="row text-center">
+            <a class="btn btn-outline-success" href="{% url 'index' %}">Página Inicial</a>
+        </div>
+        <img src="{% static 'img/under_construction.jpg' %}" alt="Under Construction">
+    </div>
+{% endblock %}

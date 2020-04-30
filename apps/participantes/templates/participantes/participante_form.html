@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <h1>Cadastro de Clientes</h1>
+    <h1>Cadastro de Participantes</h1>
     <form action="" method="post" autocomplete="off">
         {% csrf_token %}
         <div class="row">
@@ -15,7 +15,10 @@
             <div class="col-md-4">
                 {{form.codigo|as_crispy_field}}
             </div>
-            <div class="col-md-8">
+            <div class="col-md-4">
+                {{form.cnpj|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
                 {{form.razao_social|as_crispy_field}}
             </div>
         </div>
@@ -28,6 +31,36 @@
             </div>
             <div class="col-md-4">
                 {{form.email|as_crispy_field}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                {{form.cep|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.endereco|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.numero|as_crispy_field}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                {{form.complemento|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.bairro|as_crispy_field}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                {{form.cidade|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.uf|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.pais|as_crispy_field}}
             </div>
         </div>
         <div class="row">

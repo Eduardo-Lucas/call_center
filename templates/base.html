@@ -29,13 +29,16 @@
                                 <a class="nav-link" href="{% url 'colaborador_list' %}">Colaboradores</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="{% url 'participante_list' %}">Participantes</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{% url 'cliente_list' %}">Clientes</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Produtos</a>
+                                <a class="nav-link" href="{% url 'under_construction' %}">Produtos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Pedidos</a>
+                                <a class="nav-link" href="{% url 'under_construction' %}">Pedidos</a>
                             </li>
                             <li class="nav-item">
                                 {% if user.is_authenticated %}
