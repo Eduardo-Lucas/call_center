@@ -21,13 +21,12 @@
     <div class="container mb-3 mt-3">
         <h1>Lista de Participantes</h1>
         <table class="table table-striped table-bordered mydatatable" style="width: 100%" >
-            <thead>
+            <thead class="border-bottom font-weight-bold">
                 <tr>
                     <td>Código</td>
                     <td>Razão Social</td>
                     <td>Contato</td>
                     <td>Telefone</td>
-                    <td>E-mail</td>
                     <td>
                         <a href="{% url 'participante_form' %}" class="btn btn-outline-success">
                             <i class="fas fa-plus"></i> Adiciona Novo
@@ -37,24 +36,35 @@
             </thead>
             <tbody>
 
-                {% for cliente in object_list %}
+                {% for participante in object_list %}
                     <tr>
-                        <td>{{ cliente.codigo }}</td>
-                        <td>{{ cliente.razao_social }}</td>
-                        <td>{{ cliente.pessoa_contato }}</td>
-                        <td>{{ cliente.telefone }}</td>
-                        <td>{{ cliente.email }}</td>
+                        <td>{{ participante.codigo }}</td>
+                        <td>{{ participante.razao_social }}</td>
+                        <td>{{ participante.pessoa_contato }}</td>
+                        <td>{{ participante.telefone }}</td>
+
+                        <td>
+                            <a href="{% url 'participante_edit' participante.id %}" class="btn text-secondary px-0">
+                                <i class="far fa-edit fa-lg"></i>
+                            </a>
+                            <form action="{% url 'participante_delete' participante.id %}" method="post" class="d-inline">
+                                {% csrf_token %}
+                                <button type="submit" class="btn">
+                                    <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                 {% endfor %}
 
             </tbody>
-            <tfoot>
+            <tfoot class="border-bottom font-weight-bold">
                 <tr>
                     <td>Código</td>
                     <td>Razão Social</td>
                     <td>Contato</td>
                     <td>Telefone</td>
-                    <td>E-mail</td>
+
                 </tr>
             </tfoot>
         </table>

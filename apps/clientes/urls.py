@@ -1,9 +1,10 @@
 from django.urls import path
 
-from apps.clientes.views import cliente_list, cliente_form, cliente_delete
+from apps.clientes.views import ClienteListView, ClienteCreateView, ClienteUpdateView, ClienteDeleteView
 
 urlpatterns = [
-    path('list', cliente_list, name='cliente_list'),
-    path('form', cliente_form, name='cliente_form'),
-    path('delete', cliente_delete, name='cliente_delete'),
-    ]
+    path('list', ClienteListView.as_view(), name='cliente_list'),
+    path('create', ClienteCreateView.as_view(), name='cliente_form'),
+    path('edit/<pk>', ClienteUpdateView.as_view(), name='cliente_edit'),
+    path('delete/<pk>/', ClienteDeleteView.as_view(), name='cliente_delete'),
+]

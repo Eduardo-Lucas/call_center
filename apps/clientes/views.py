@@ -1,23 +1,31 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 
-from apps.clientes.forms import ClienteForm
 from apps.clientes.models import Cliente
 
 
-@login_required
-def cliente_list(request):
-    clientes = Cliente.objects.all()
-    return render(request, 'participantes/participante_list.html', {'participantes': clientes})
+class ClienteListView(LoginRequiredMixin, ListView):
+    model = Cliente
+    fields = ['all', ]
+    context_object_name = 'cliente_list'
+    template_name = 'clientes/cliente_list.html'
 
 
-@login_required
-def cliente_form(request):
-    form = ClienteForm()
-    return render(request, 'participantes/participante_form.html', {'form': form})
+class ClienteCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Cliente
+    fields = '__all__'
+    success_message = 'O Cliente %(nome)s foi criado com sucesso.'
 
 
-@login_required
-def cliente_delete(request):
-    pass
-    # return render(request, 'participantes/participante_delete.html')
+class ClienteUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Cliente
+    fields = '__all__'
+    success_message = 'O Cliente %(nome)s foi atualizado com sucesso.'
+
+
+class ClienteDeleteView(LoginRequiredMixin, DeleteView):
+    model = Cliente
+    success_url = reverse_lazy('cliente_list')

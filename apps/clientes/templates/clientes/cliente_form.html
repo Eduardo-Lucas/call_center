@@ -7,7 +7,7 @@
         {% csrf_token %}
         <div class="row">
             <div class="col-md-8">
-                {{form.colaborador|as_crispy_field}}
+                {{form.participante|as_crispy_field}}
             </div>
 
         </div>
@@ -16,12 +16,12 @@
                 {{form.codigo|as_crispy_field}}
             </div>
             <div class="col-md-8">
-                {{form.razao_social|as_crispy_field}}
+                {{form.nome|as_crispy_field}}
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                {{form.pessoa_contato|as_crispy_field}}
+                {{form.cpf|as_crispy_field}}
             </div>
             <div class="col-md-4">
                 {{form.telefone|as_crispy_field}}
@@ -30,6 +30,40 @@
                 {{form.email|as_crispy_field}}
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                {{form.cep|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.endereco|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.numero|as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                {{form.complemento|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.bairro|as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                {{form.cidade|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.uf|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.pais|as_crispy_field}}
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-md-8">
                 <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
