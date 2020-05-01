@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Cadastro de Categorias</h1>
+    <form action="" method="post" >
+        {% csrf_token %}
+
+        <div class="row">
+            <div class="col-md-4">
+                {{form.nome|as_crispy_field}}
+            </div>
+            <div class="col-md-8">
+                {{form.slug|as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                    Gravar
+                </button>
+            </div>
+            <div class="col-md-4">
+                <a href="{% url 'cliente_list' %}" class="btn btn-secondary btn-block btn-lg">
+                    <i class="fas fa-stream"></i> Volta para a Lista
+                </a>
+            </div>
+        </div>
+
+    </form>
+{% endblock %}

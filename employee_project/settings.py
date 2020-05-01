@@ -44,9 +44,11 @@ INSTALLED_APPS = [
     'import_export',
 
     'apps.core',
+    'apps.categorias',
     'apps.colaboradores',  # Pode ser do Call Center ou do Participante
     'apps.clientes',       # Esse tem CPF e é cliente do Participante
     'apps.participantes',  # Esse tem CNPJ e é cliente do Call Center
+    'apps.produtos',
     'apps.employee_register',
 
 ]

@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Employee Register</title>
+    <title>Call Center da Bahia</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <div class="col-md-10 offset-md-1 mt-5">
+        <div class="col-md-10 offset-md-1 mt-0">
             <div class="jumbotron">
                 <h1 class="display-4">Call Center da Bahia</h1>
                 <p class="lead font-italic">Registro de Pedidos de Clientes</p>
@@ -35,7 +35,10 @@
                                 <a class="nav-link" href="{% url 'cliente_list' %}">Clientes</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'under_construction' %}">Produtos</a>
+                                <a class="nav-link" href="{% url 'categoria_list' %}">Categorias</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'produto_list' %}">Produtos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'under_construction' %}">Pedidos</a>

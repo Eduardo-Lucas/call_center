@@ -11,7 +11,7 @@ class ClienteListView(LoginRequiredMixin, ListView):
     model = Cliente
     fields = ['all', ]
     context_object_name = 'cliente_list'
-    template_name = 'clientes/cliente_list.html'
+    template_name = 'clientes/categoria_list.html'
 
 
 class ClienteCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):

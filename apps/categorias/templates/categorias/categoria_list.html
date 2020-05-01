@@ -19,40 +19,38 @@
 <body>
 
     <div class="container mb-3 mt-3">
-        <h1>Lista de Colaboradores</h1>
+        <h1>Lista de Categorias</h1>
         <table class="table table-striped table-bordered mydatatable" style="width: 100%" >
             <thead class="border-bottom font-weight-bold">
                 <tr>
                     <td>Nome</td>
-                    <td>Telefone</td>
-                    <td>E-mail</td>
-                    <td>Call Center</td>
+                    <td>Slug</td>
                     <td>
-                        <a href="{% url 'colaborador_form' %}" class="btn btn-outline-success">
-                            <i class="fas fa-plus"></i> Adicionar Novo
+                        <a href="{% url 'categoria_form' %}" class="btn btn-outline-success">
+                            <i class="fas fa-plus"></i> Adiciona Novo
                         </a>
                     </td>
+
                 </tr>
             </thead>
             <tbody>
 
-                {% for colaborador in object_list %}
+                {% for categoria in categoria_list %}
                     <tr>
-                        <td>{{ colaborador.nome }}</td>
-                        <td>{{ colaborador.telefone }}</td>
-                        <td>{{ colaborador.email }}</td>
-                        <td>{{ colaborador.is_call_center }}</td>
+                        <td>{{ categoria.nome }}</td>
+                        <td>{{ categoria.slug }}</td>
                         <td>
-                            <a href="{% url 'colaborador_edit' colaborador.id %}" class="btn text-secondary px-0">
+                            <a href="{% url 'categoria_edit' categoria.id %}" class="btn text-secondary px-0">
                                 <i class="far fa-edit fa-lg"></i>
                             </a>
-                            <form action="{% url 'colaborador_delete' colaborador.id %}" method="post" class="d-inline">
+                            <form action="{% url 'categoria_delete' categoria.id %}" method="post" class="d-inline">
                                 {% csrf_token %}
                                 <button type="submit" class="btn">
                                     <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
                                 </button>
                             </form>
                         </td>
+
                     </tr>
                 {% endfor %}
 
@@ -60,10 +58,8 @@
             <tfoot class="border-bottom font-weight-bold">
                 <tr>
                     <td>Nome</td>
-                    <td>Telefone</td>
-                    <td>E-mail</td>
-                    <td>Call Center</td>
-                    <td></td>
+                    <td>Slug</td>
+
                 </tr>
             </tfoot>
         </table>

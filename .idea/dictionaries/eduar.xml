@@ -2,6 +2,8 @@
   <dictionary name="eduar">
     <words>
       <w>atualizado</w>
+      <w>categoria</w>
+      <w>categorias</w>
       <w>cliente</w>
       <w>clientes</w>
       <w>cnpj</w>
@@ -15,6 +17,8 @@
       <w>participantes</w>
       <w>pessoa</w>
       <w>pode</w>
+      <w>produto</w>
+      <w>produtos</w>
       <w>razao</w>
       <w>relacionamento</w>
       <w>telefone</w>
