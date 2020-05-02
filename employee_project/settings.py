@@ -17,7 +17,6 @@ from django.contrib import messages
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -25,10 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#l55&jyvqu$kukw^*4h0s18r+f)2s_gm(3i-7=@7*1#nr1q4yn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['ba-call-center.herokuapp.com', '127.0.0.1']
-
 
 # Application definition
 
@@ -47,7 +45,7 @@ INSTALLED_APPS = [
     'apps.accounts',
     'apps.categorias',
     'apps.colaboradores',  # Pode ser do Call Center ou do Participante
-    'apps.clientes',       # Esse tem CPF e é cliente do Participante
+    'apps.clientes',  # Esse tem CPF e é cliente do Participante
     'apps.participantes',  # Esse tem CNPJ e é cliente do Call Center
     'apps.produtos',
     'apps.employee_register',
@@ -91,7 +89,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'employee_project.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -101,6 +98,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -121,7 +122,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -131,7 +131,6 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
@@ -139,7 +138,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (os.path.join('static'), )
+STATICFILES_DIRS = (os.path.join('static'),)
 
 LOGIN_REDIRECT_URL = '/'
 
