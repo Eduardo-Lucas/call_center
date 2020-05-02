@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'import_export',
 
     'apps.core',
+    'apps.accounts',
     'apps.categorias',
     'apps.colaboradores',  # Pode ser do Call Center ou do Participante
     'apps.clientes',       # Esse tem CPF e é cliente do Participante
@@ -136,7 +137,7 @@ STATICFILES_DIRS = (os.path.join('static'), )
 
 LOGIN_REDIRECT_URL = '/'
 
-LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'login'
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
