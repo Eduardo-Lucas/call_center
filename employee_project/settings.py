@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#l55&jyvqu$kukw^*4h0s18r+f)2s_gm(3i-7=@7*1#nr1q4yn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['ba-call-center.herokuapp.com', '127.0.0.1']
 
